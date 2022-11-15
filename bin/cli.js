@@ -3,10 +3,10 @@
 import { roll } from "/lib/roll.js"
 import minimist from "minimist";
 
-const args = minimist(process.aegv.slice(2));
+const args = require('minimist')(process.argv.slice(2));
 
-const sides = args.sides;
-const dice = args.dice;
-const rolls = args.rolls;
+const sides = args.sides || 6;
+const dice = args.dice || 2;
+const rolls = args.rolls || 1;
 
 console.log(roll(sides, dice, rolls));
